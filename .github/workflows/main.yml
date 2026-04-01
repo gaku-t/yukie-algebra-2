@@ -14,10 +14,10 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: GitHub Action for LaTeX
-        uses: xu-cheng/latex-action@f1ca82cbed861b3534e2997dd584944f55b884ed  # v3.1.0
+        uses: xu-cheng/latex-action@25080975331dc4fc8e6f1af55788e00f84f51fff  # v4.0.0
         with:
           root_file: main.tex
           latexmk_use_lualatex: true
@@ -29,7 +29,7 @@ jobs:
           gh release delete latest --repo ${{ github.repository }} --yes --cleanup-tag || true
 
       - name: Create "latest" Release
-        uses: softprops/action-gh-release@de2c0eb89ae2a093876385947365aca7b0e5f844  # v0.1.15
+        uses: softprops/action-gh-release@153bb8e04406b158c6c84fc1615b65b24149a1fe  # v2.6.1
         with:
           tag_name: latest
           name: Latest Build
