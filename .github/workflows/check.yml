@@ -1,0 +1,17 @@
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check_compile:
+    runs-on: ubuntu-latest
+    name: Check TeX Compilation
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: GitHub Action for LaTeX
+        uses: xu-cheng/latex-action@f1ca82cbed861b3534e2997dd584944f55b884ed  # v3.1.0
+        with:
+          root_file: main.tex
+          latexmk_use_lualatex: true

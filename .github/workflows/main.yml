@@ -1,0 +1,36 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  compile_and_release:
+    runs-on: ubuntu-latest
+    name: Compile TeX to PDF and Release
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: GitHub Action for LaTeX
+        uses: xu-cheng/latex-action@f1ca82cbed861b3534e2997dd584944f55b884ed  # v3.1.0
+        with:
+          root_file: main.tex
+          latexmk_use_lualatex: true
+
+      - name: Delete existing "latest" release and tag (if present)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release delete latest --repo ${{ github.repository }} --yes --cleanup-tag || true
+
+      - name: Create "latest" Release
+        uses: softprops/action-gh-release@de2c0eb89ae2a093876385947365aca7b0e5f844  # v0.1.15
+        with:
+          tag_name: latest
+          name: Latest Build
+          body: |
+            Compiled PDF ${{ github.sha }}
+          draft: false
+          prerelease: false
+          files: main.pdf
