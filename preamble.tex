@@ -1,0 +1,12 @@
+\usepackage{luatexja}
+
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{bm}
+\usepackage{mathtools}
+
+\theoremstyle{definition}
+\newtheorem{innercustomthm}{}
+\newenvironment{ans}[1]
+  {\renewcommand\theinnercustomthm{#1}\innercustomthm}
+  {\endinnercustomthm}
+
