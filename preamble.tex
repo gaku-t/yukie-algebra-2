@@ -3,6 +3,9 @@
 \usepackage{amsmath, amssymb, amsthm}
 \usepackage{bm}
 \usepackage{mathtools}
+\usepackage[framemethod=TikZ]{mdframed}
+
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
 
 \theoremstyle{definition}
 \newtheorem{innercustomthm}{}
@@ -14,4 +17,42 @@
 \newenvironment{prob}[1]
   {\renewcommand\theinnercustomprob{#1}\innercustomprob}
   {\endinnercustomprob}
+
+% 補足: テキストで省略された厳密な定義・議論を書き添えるための環境.
+% 解答本文と区別するため, 番号なしの remark スタイルにしている.
+% 任意で見出しを付けられる: \begin{supp}[群環の定義] ... \end{supp}
+\theoremstyle{remark}
+\newtheorem*{supp}{補足}
+\surroundwithmdframed[
+  linewidth=0.5pt,
+  linecolor=black!45,
+  backgroundcolor=black!3,
+  roundcorner=3pt,
+  innertopmargin=6pt,
+  innerbottommargin=6pt,
+  innerleftmargin=8pt,
+  innerrightmargin=8pt,
+  skipabove=\topsep,
+  skipbelow=\topsep,
+]{supp}
+
+% 例: 補足の中で, 定義や主張の具体例を示すための環境.
+% supp の枠内で使う想定なので, 二重の枠にならないよう左罫線のみの軽い装飾にしている.
+% 番号なし. 任意で見出しを付けられる: \begin{ex}[群環の元] ... \end{ex}
+\theoremstyle{definition}
+\newtheorem*{ex}{例}
+\surroundwithmdframed[
+  topline=false,
+  rightline=false,
+  bottomline=false,
+  linewidth=1.5pt,
+  linecolor=black!35,
+  innertopmargin=4pt,
+  innerbottommargin=4pt,
+  innerleftmargin=8pt,
+  innerrightmargin=0pt,
+  skipabove=\topsep,
+  skipbelow=\topsep,
+]{ex}
+
 
