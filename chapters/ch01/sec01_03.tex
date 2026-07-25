@@ -1,0 +1,299 @@
+\begin{ans}{1.3.1}
+  \begin{align*}
+    f(t^2+1,\ 1-t,\ 3t+2)
+    &= (t^2+1)^2 + (1-t)(3t+2) \\
+    &= (t^4 + 2t^2 + 1) + (-3t^2 + t + 2) \\
+    &= t^4 - t^2 + t + 3
+  \end{align*}
+\end{ans}
+
+\begin{ans}{1.3.2}
+  (1) $B$ は差で閉じているので加法に関して部分群. また積でも閉じており, $1_A \in B$ である.
+
+  (2) $x \in B$ であるが $x \cdot x \notin B$ であり, $B$ は積で閉じていない.
+\end{ans}
+
+\begin{ans}{1.3.3}
+  \[
+    \frac{a}{2^n} + \frac{-b}{2^m} = \frac{2^m a - 2^n b}{2^{n+m}} \in A
+  \]
+  より, $A$ は加法に関して $\mathbb{Q}$ の部分群.
+  \[
+    \frac{a}{2^n} \cdot \frac{b}{2^m} = \frac{ab}{2^{n+m}} \in A
+  \]
+  より $A$ は積で閉じており, さらに $1_{\mathbb{Q}} = \dfrac{1}{2^0} \in A$.
+\end{ans}
+
+\begin{ans}{1.3.4}
+  自己同型 $\phi$ に対し, $\phi(1) = 1$ より, $n \geq 0$ ならば
+  \[
+    \phi(n) = \phi(1) + \cdots + \phi(1) = n.
+  \]
+  また $n \leq 0$ ならば $-n \geq 0$ であり,
+  \[
+    \phi(n) = -\phi(-n) = -(-n) = n.
+  \]
+  よって $\phi$ は恒等写像.
+\end{ans}
+
+\begin{ans}{1.3.5}
+  $\phi(xy) = \phi(x)\phi(y)$ で $y = 1$ とすれば
+  \[
+    \phi(x) = \phi(x)\phi(1).
+  \]
+  $\mathbb{Z}$ は整域だから, $\phi(x) \neq 0$ なる $x$ が存在すれば $\phi(1) = 1$.
+  したがって定値写像 $\phi(x) = 0$ のみが候補となるが, 実際にこれは問題の条件を満たす.
+\end{ans}
+
+\begin{ans}{1.3.6}
+  略.
+\end{ans}
+
+\begin{ans}{1.3.7}
+  \[
+    x^2 - x^5 y = (x^2 - y^3) - y(x^5 - y^2) \in I.
+  \]
+\end{ans}
+
+\begin{ans}{1.3.8}
+  (1) $\mathrm{Ker}\,\phi = (x^4 - y^3)$ であることを示す.
+  $\phi(x^4 - y^3) = (t^3)^4 - (t^4)^3 = 0$ より $x^4 - y^3 \in \mathrm{Ker}\,\phi$ であるから,
+  $(x^4 - y^3) \subset \mathrm{Ker}\,\phi$.
+  $f(x,y) \in \mathrm{Ker}\,\phi$ とする.
+  $x^4 - y^3$ を $y$ の多項式とみて $f(x,y)$ を割ると
+  \[
+    f(x,y) = g(x,y)(x^4 - y^3) + h_1(x)y^2 + h_2(x)y + h_3(x).
+  \]
+  $f(t^3, t^4) = 0$ より,
+  \[
+    h_1(t^3)t^8 + h_2(t^3)t^4 + h_3(t^3) = 0.
+  \]
+  $h_1(t^3)t^8$ はすべての項が $(3k+2)$ 次, $h_2(t^3)t^4$ はすべての項が $(3k+1)$ 次,
+  $h_3(t^3)$ はすべての項が $3k$ 次である.
+  これより $h_1(x) = h_2(x) = h_3(x) = 0$.
+  よって $f(x,y) = g(x,y)(x^4 - y^3) \in (x^4 - y^3)$ であるから, $\mathrm{Ker}\,\phi = (x^4 - y^3)$.
+
+  \medskip
+  (2) $\mathrm{Ker}\,\phi = (xz - y^2)$ を示す.
+  \[
+    \phi(xz - y^2) = \phi(x)\phi(z) - \phi(y)^2 = t^2 s^2 - (ts)^2 = 0
+  \]
+  より $xz - y^2 \in \mathrm{Ker}\,\phi$ であるから, $(xz - y^2) \subset \mathrm{Ker}\,\phi$.
+  $f \in \mathrm{Ker}\,\phi$ とする.
+  $xz - y^2$ を $y$ の多項式とみて $f(x,y,z)$ を割ると
+  \[
+    f(x,y,z) = g(x,y,z)(xz - y^2) + h_1(x,z)y + h_2(x,z).
+  \]
+  $f(t^2, ts, s^2) = 0$ より
+  \[
+    h_1(t^2, s^2)ts + h_2(t^2, s^2) = 0.
+  \]
+  $t$ に関して $h_1(t^2, s^2)ts$ のすべての項は奇数次, $h_2(t^2, s^2)$ のすべての項は偶数次であるから,
+  $h_1(x,z) = h_2(x,z) = 0$.
+  よって $f(x,y,z) = g(x,y,z)(xz - y^2) \in (xz - y^2)$ であるから, $\mathrm{Ker}\,\phi = (xz - y^2)$.
+
+  \medskip
+  (3) $\mathrm{Ker}\,\phi = (xz - y^2,\ x^3 - yz,\ x^2 y - z^2)$ を示す.
+  \begin{align*}
+    \phi(xz - y^2) &= \phi(x)\phi(z) - \phi(y)^2 = t^3 t^5 - (t^4)^2 = 0, \\
+    \phi(x^3 - yz) &= \phi(x)^3 - \phi(y)\phi(z) = (t^3)^3 - t^4 t^5 = 0, \\
+    \phi(x^2 y - z^2) &= \phi(x)^2 \phi(y) - \phi(z)^2 = (t^3)^2 t^4 - (t^5)^2 = 0
+  \end{align*}
+  より, $(xz - y^2,\ x^3 - yz,\ x^2 y - z^2) \subset \mathrm{Ker}\,\phi$.
+  $f(x,y,z) \in \mathrm{Ker}\,\phi$ とする.
+  $x^2 y - z^2$ を $z$ の多項式とみて $f(x,y,z)$ を割ると
+  \[
+    f(x,y,z) = g_1(x,y,z)(x^2 y - z^2) + h_1(x,y)z + h_2(x,y).
+  \]
+  さらに $h_1(x,y),\ h_2(x,y)$ それぞれを, $y$ の多項式 $x^4 - y^3$ で割ると
+  \begin{align*}
+    f(x,y,z) = {}& g_1(x,y,z)(x^2 y - z^2) \\
+    & + \bigl(g_2(x,y)(x^4 - y^3) + h_3(x)y^2 + h_4(x)y + h_5(x)\bigr)z \\
+    & + g_3(x,y)(x^4 - y^3) + h_6(x)y^2 + h_7(x)y + h_8(x).
+  \end{align*}
+  これに $x = t^3,\ y = t^4,\ z = t^5$ を代入すると,
+  \[
+    h_3(t^3)t^{13} + h_4(t^3)t^9 + h_5(t^3)t^5 + h_6(t^3)t^8 + h_7(t^3)t^4 + h_8(t^3) = 0.
+  \]
+  各項の $t$ の次数を $3$ で割ったあまりは $1,\ 0,\ 2,\ 2,\ 1,\ 0$ となるので,
+  \begin{align*}
+    h_7(x) &= -h_3(x)x^3, \\
+    h_8(x) &= -h_4(x)x^3, \\
+    h_5(x) &= -h_6(x)x.
+  \end{align*}
+  これを代入して整理すれば,
+  \begin{align*}
+    f(x,y,z) = {}& g_1(x,y,z)(x^2 y - z^2) + g_2(x,y)(x^4 - y^3)z \\
+    & + g_3(x,y)(x^4 - y^3) - h_3(x)y(x^3 - yz) - h_4(x)(x^3 - yz) \\
+    & - h_6(x)(xz - y^2).
+  \end{align*}
+  ここで, $x^4 - y^3 = y(xz - y^2) + x(x^3 - yz)$ であることに注意すると,
+  $f(x,y,z) \in (xz - y^2,\ x^3 - yz,\ x^2 y - z^2)$.
+  よって $\mathrm{Ker}\,\phi = (xz - y^2,\ x^3 - yz,\ x^2 y - z^2)$.
+
+  \medskip
+  (4) $(x^3 - yz,\ y^3 - x^2 z,\ z^2 - xy^2) = \mathrm{Ker}\,\phi$ を示す.
+  $x^3 - yz,\ y^3 - x^2 z,\ z^2 - xy^2 \in \mathrm{Ker}\,\phi$ が計算によって確かめられる.
+  よって $(x^3 - yz,\ y^3 - x^2 z,\ z^2 - xy^2) \subset \mathrm{Ker}\,\phi$.
+  $f \in \mathrm{Ker}\,\phi$ とする.
+  $f$ を $z^2 - xy^2$ で割って
+  \[
+    f(x,y,z) = g_1(x,y,z)(z^2 - xy^2) + h_1(x,y)z + h_2(x,y).
+  \]
+  さらに $h_1,\ h_2$ を $x^5 - y^4$ で割ると
+  \begin{align*}
+    f(x,y,z) = {}& g_1(x,y,z)(z^2 - xy^2) \\
+    & + \bigl(g_2(x,y)(x^5 - y^4) + h_3(x)y^3 + h_4(x)y^2 + h_5(x)y + h_6(x)\bigr)z \\
+    & + g_3(x,y)(x^5 - y^4) + h_7(x)y^3 + h_8(x)y^2 + h_9(x)y + h_{10}(x).
+  \end{align*}
+  $x = t^4,\ y = t^5,\ z = t^7$ を代入して
+  \begin{align*}
+    & h_3(t^4)t^{22} + h_4(t^4)t^{17} + h_5(t^4)t^{12} + h_6(t^4)t^7 \\
+    & \qquad + h_7(t^4)t^{15} + h_8(t^4)t^{10} + h_9(t^4)t^5 + h_{10}(t^4) = 0.
+  \end{align*}
+  各項を, $t$ の次数を $4$ で割ったあまりで分割して,
+  \begin{align*}
+    h_6(x) &= -h_7(x)x^2, \\
+    h_8(x) &= -h_3(x)x^3, \\
+    h_9(x) &= -h_4(x)x^3, \\
+    h_{10}(x) &= -h_5(x)x^3.
+  \end{align*}
+  これを代入して整理すれば,
+  \begin{align*}
+    f(x,y,z) = {}& g_1(x,y,z)(z^2 - xy^2) + g_2(x,y)(x^5 - y^4)z + g_3(x,y)(x^5 - y^4) \\
+    & - h_3(x)y^2(x^3 - yz) - h_4(x)y(x^3 - yz) - h_5(x)(x^3 - yz) \\
+    & + h_7(x)(y^3 - x^2 z).
+  \end{align*}
+  ここで $x^5 - y^4 = x^2(x^3 - yz) - y(y^3 - x^2 z)$ であることに注意すると,
+  $f(x,y,z) \in (x^3 - yz,\ y^3 - x^2 z,\ z^2 - xy^2)$.
+  よって $\mathrm{Ker}\,\phi = (x^3 - yz,\ y^3 - x^2 z,\ z^2 - xy^2)$.
+\end{ans}
+
+\begin{ans}{1.3.9}
+  $I \cap B$ は $B$ のイデアルであり,
+  \[
+    x^2 - z^5 = (x^2 - y^3) + (y^3 - z^5) \in I \cap B
+  \]
+  より, $(x^2 - z^5)B \subset I \cap B$.
+  $f(x,z) \in I \cap B$ とし, $f$ を $x$ の多項式 $x^2 - z^5$ で割ると
+  \[
+    f(x,z) = g(x,z)(x^2 - z^5) + h_1(z)x + h_2(z).
+  \]
+  $f(x,z) \in I$ より, $x = t^{15}$, $y = t^{10}$, $z = t^6$ を代入すると $0$ となるから,
+  \[
+    h_1(t^6)t^{15} + h_2(t^6) = 0.
+  \]
+  $h_1(t^6)t^{15}$ のすべての項の次数は $6$ で割ったあまりが $3$,
+  $h_2(t^6)$ のすべての項の次数は $6$ で割ったあまりが $0$ なので, $h_1 = h_2 = 0$.
+  よって $f(x,z) \in (x^2 - z^5)B$ であるから, $I \cap B = (x^2 - z^5)B$.
+\end{ans}
+
+\begin{ans}{1.3.10}
+  (1) $ad - bc \neq 0$ ならば,
+  \begin{align*}
+    \psi(x) &= \frac{d}{ad - bc}x - \frac{b}{ad - bc}y, \\
+    \psi(y) &= -\frac{c}{ad - bc}x + \frac{a}{ad - bc}y
+  \end{align*}
+  と $\psi$ を定めれば, $\psi = \phi^{-1}$ となる. よって $\phi$ は同型.
+
+  $ad - bc = 0$ ならば, $\phi$ は
+  \begin{align*}
+    \phi(x) &= s(ax + by), \\
+    \phi(y) &= t(ax + by)
+  \end{align*}
+  の形になっている. このとき $\phi(tx - sy) = 0$, $tx - sy \neq 0$ なので $\phi$ は単射ではなく,
+  もちろん同型ではない.
+
+  \medskip
+  (2) $\psi(x) = x$, $\psi(y) = -f(x) + y$ で $\psi$ を定めれば $\psi = \phi^{-1}$ であり, $\phi$ は同型.
+\end{ans}
+
+\begin{ans}{1.3.11}
+  $\deg f(t) = n$, $\deg g(t) = m$ で,
+  \begin{align*}
+    f(t) &= a_0 + a_1 t + \cdots + a_n t^n, \\
+    g(t) &= b_0 + b_1 t + \cdots + b_m t^m
+  \end{align*}
+  とおく. $f(g(t))$ には $t^{nm}$ の項が $1$ つだけ現れて, その係数は $a_n b_m^{\,n}$ となる.
+  $a_n b_m^{\,n} \neq 0$ であり, 次数が $nm$ をこえる項は存在しない.
+  よって $\deg\bigl(f(g(t))\bigr) = \deg f(t) \deg g(t)$.
+\end{ans}
+
+\begin{ans}{1.3.12}
+  明らかに $\phi \neq 0$. また $\phi(0) = 0$.
+  $\phi(x) = f(x)$ とすると, 前問の結果より $g \in \mathbb{C}[x] \setminus \{0\}$ に対して
+  $\deg \phi(g) = \deg f \deg g$ であるが, $\phi$ の全射性より, $\deg f \deg g = 1$ となる $g$ が
+  存在しなければならず, $\deg f = 1$ である.
+\end{ans}
+
+\begin{ans}{1.3.13}
+  $IB = \mathbb{Q}$ なので, $IB \cap A = \mathbb{Z}$.
+\end{ans}
+
+\begin{ans}{1.3.14}
+  \[
+    \deg\bigl((x^2 + 1)f\bigr) = 2 + \deg f
+  \]
+  より, $(x^2 + 1)f \in A$ となりうるのは $f = 0$ のみである.
+  よって $I \cap A = (0)$.
+\end{ans}
+
+\begin{ans}{1.3.15}
+  \[
+    x^6 - y^4 = (x^3 + y^2)(x^3 - y^2) \in I
+  \]
+  また $x^6 - y^4 \in B$ も明らかなので, $(x^6 - y^4) \subset I \cap B$.
+  $f \in I \cap B$ とする.
+  $x^6 - y^4$ を $x^2$ の多項式とみて, $f$ を割ると
+  \[
+    f(x,y) = g(x^2, y)(x^6 - y^4) + h_1(y)x^4 + h_2(y)x^2 + h_3(y).
+  \]
+  $x^2 = t^4$, $y = t^3$ を代入して,
+  \[
+    h_1(t^3)t^8 + h_2(t^3)t^4 + h_3(t^3) = 0.
+  \]
+  各項の $t$ の次数を $3$ で割ったあまりが $h_1(t^3)t^8$, $h_2(t^3)t^4$, $h_3(t^3)$ それぞれで異なるから,
+  $h_1 = h_2 = h_3 = 0$.
+  よって $f(x,y) = g(x^2, y)(x^6 - y^4) \in (x^6 - y^4)$ なので, $(x^6 - y^4) = I \cap B$.
+\end{ans}
+
+\begin{ans}{1.3.16}
+  \[
+    (x^2 + y + 1) + (x + y^2) - x(x + 1) - y(y + 1) = 1
+  \]
+  より $1 \in I + J$. よって $I + J = A$.
+\end{ans}
+
+\begin{ans}{1.3.17}
+  $I \cap A \supset Ax_1 + \cdots + Ax_{l_1}$ は明らか.
+  $f \in I \cap A$ とすると, $f$ の各項は $x_1, \ldots, x_{l_1}$ のいずれかを含む.
+  なぜならば, そうでない項がもしあるとすれば, $f \in I$ よりその項は $By_1 + \cdots + By_{l_2}$ の元で
+  あるはずだが, これは $y_1, \ldots, y_{l_2}$ のいずれかを含むことになり, $A$ の元でないからである.
+  したがって
+  \[
+    f = x_1 g_1 + \cdots + x_{l_1} g_{l_1} \quad (g_1, \ldots, g_{l_1} \in B)
+  \]
+  とかけるが, 再び $f$ が $y_1, \ldots, y_{l_2}$ を含まないことにより, $g_1, \ldots, g_{l_1}$ で
+  $y_1, \ldots, y_{l_2}$ を含む項は, もしあってもキャンセルされるので, はじめから
+  $g_1, \ldots, g_{l_1} \in A$ としてよい. すなわち $f \in Ax_1 + \cdots + Ax_{l_1}$ である.
+  よって $I \cap A = Ax_1 + \cdots + Ax_{l_1}$.
+\end{ans}
+
+\begin{ans}{1.3.18}
+  $f \in I^l$ の$0$以外の元は $x$ の $l$ 次以上の項のみからなり, $x$ に関する $1$ 回の偏微分で $l-1$ 次以上の項のみ
+  からなるものになる. この偏微分を $t$ 回くりかえすことになるので, $Df \in I^{l-t}$ となる.
+\end{ans}
+
+\begin{ans}{1.3.19}
+  (1) $x^2,\ xy \in I^2 \cap J$ より $(x^2, xy) \subset I^2 \cap J$.
+  $f \in I^2 \cap J$ とすると, $f \in I^2$ より $f$ の各項は $2$ 次以上である.
+  もし $f$ が $y^n$ ($n \geq 2$) の項をもてば $f \in J$ に反するので, $f \in (x^2, xy)$ となる.
+  よって $I^2 \cap J = (x^2, xy)$.
+
+  \medskip
+  (2) $x^2 y,\ xy^2 \in I^3 \cap J \cap K$ より $(x^2 y, xy^2) \subset I^3 \cap J \cap K$.
+  $f \in I^3 \cap J \cap K$ とすると, $f \in I^3$ より $f$ の各項は $3$ 次以上である.
+  もし $f$ が $x^n$ ($n \geq 3$) の項をもてば $f \in K$ に反し, また もし $f$ が $y^n$ ($n \geq 3$) の
+  項をもてば $f \in J$ に反するので, $f \in (x^2 y, xy^2)$ となる.
+  よって $I^3 \cap J \cap K = (x^2 y, xy^2)$.
+\end{ans}
