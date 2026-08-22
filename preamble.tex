@@ -7,6 +7,11 @@
 
 \DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
 
+% 二重の剰余 (A/I)/(J/I) のためのコマンド.
+\newcommand{\nestquot}[2]{%
+  \raisebox{0.55em}{$#1$}\mkern-2mu\Big/\mkern-2mu\raisebox{-0.55em}{$#2$}%
+}
+
 \theoremstyle{definition}
 \newtheorem{innercustomthm}{}
 \newenvironment{ans}[1]

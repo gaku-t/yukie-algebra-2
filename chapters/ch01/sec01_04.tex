@@ -1,0 +1,67 @@
+\begin{ans}{1.4.1}
+  (1) 準同型 $\phi \colon \mathbb{Z}[x] \to \mathbb{Z}[\sqrt{2}]$ を $\phi(x) = \sqrt{2}$ を
+  満たすように定めると, $\phi$ は同型
+  $\mathbb{Z}[x]/(x^2 - 2) \cong \mathbb{Z}[\sqrt{2}]$ をひきおこす.
+  $\mathbb{Z}[\sqrt{2}]$ のイデアル $(3 + \sqrt{2})$ は, この同型により,
+  $\mathbb{Z}[x]/(x^2 - 2)$ において $x + 3 + (x^2 - 2)$ が生成するイデアル
+  $(x + 3,\ x^2 - 2)/(x^2 - 2)$ に対応するので,
+  \begin{align*}
+    \mathbb{Z}[\sqrt{2}]/(3 + \sqrt{2})
+    &\cong \nestquot{\mathbb{Z}[x]/(x^2 - 2)}{(x + 3,\ x^2 - 2)/(x^2 - 2)} \\
+    &\cong \mathbb{Z}[x]/(x + 3,\ x^2 - 2) \\
+    &\cong \nestquot{\mathbb{Z}[x]/(x + 3)}{(x + 3,\ x^2 - 2)/(x + 3)}.
+  \end{align*}
+  ここで準同型 $\psi \colon \mathbb{Z}[x] \to \mathbb{Z}$ を $\psi(x) = -3$ を満たすように
+  定めると, $\psi$ は同型 $\mathbb{Z}[x]/(x + 3) \cong \mathbb{Z}$ をひきおこす.
+  $\mathbb{Z}[x]/(x + 3)$ において $x^2 - 2 + (x + 3)$ が生成するイデアル
+  $(x + 3,\ x^2 - 2)/(x + 3)$ は, この同型により, $\mathbb{Z}$ において
+  $\psi(x^2 - 2) = 7$ が生成するイデアル $7\mathbb{Z}$ に対応するので, 結局
+  \[
+    \mathbb{Z}[\sqrt{2}]/(3 + \sqrt{2}) \cong \mathbb{Z}/7\mathbb{Z} = \mathbb{F}_7
+  \]
+  である.
+
+  \medskip
+  (2) (1) と同様にして
+  \[
+    \mathbb{Z}[\sqrt{5}]/(1 + 2\sqrt{5}) \cong \mathbb{Z}[x]/(2x + 1,\ x^2 - 5).
+  \]
+  ここで
+  \begin{align*}
+    19 &= -4(x^2 - 5) + (2x - 1)(2x + 1), \\
+    x + 10 &= 10(2x + 1) - x \cdot 19
+  \end{align*}
+  より,
+  \[
+    (x + 10,\ 19) \subset (2x + 1,\ x^2 - 5).
+  \]
+  また
+  \begin{align*}
+    2x + 1 &= 2(x + 10) - 1 \cdot 19, \\
+    x^2 - 5 &= (x - 10)(x + 10) + 5 \cdot 19
+  \end{align*}
+  より逆の包含関係も成り立ち,
+  \[
+    (x + 10,\ 19) = (2x + 1,\ x^2 - 5)
+  \]
+  である. よって
+  \[
+    \mathbb{Z}[\sqrt{5}]/(1 + 2\sqrt{5}) \cong \mathbb{Z}[x]/(x + 10,\ 19).
+  \]
+  あとは
+  \[
+    \nestquot{\mathbb{Z}[x]/(x + 10)}{(x + 10,\ 19)/(x + 10)}
+  \]
+  に対して (1) と同様にするか,
+  \[
+    \nestquot{\mathbb{Z}[x]/(19)}{(x + 10,\ 19)/(19)}
+  \]
+  に対して命題 1.4.14 を適用 ($A = \mathbb{Z}$, $I = 19\mathbb{Z}$)
+  したのちに例 1.4.11 を適用 ($A = \mathbb{Z}/19\mathbb{Z}$) すれば
+  $\cong \mathbb{F}_{19}$ がわかる.
+\end{ans}
+
+\begin{ans}{1.4.2}
+  $A = \mathbb{C}[x]/(x^2)$, $B = \mathbb{C}$.
+\end{ans}
+
